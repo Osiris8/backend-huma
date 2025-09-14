@@ -11,7 +11,11 @@ from app.routes.upload import upload_bp
 app = Flask(__name__)
 app.config.from_object(Config)
 
-CORS(app, supports_credentials=True)
+CORS(
+    app,
+    resources={r"/api/*": {"origins": "https://learna-zeta.vercel.app"}},
+    supports_credentials=True
+)
 db.init_app(app)
 jwt = JWTManager(app)
 app.register_blueprint(auth_bp, url_prefix='/api/auth')
