@@ -7,13 +7,14 @@ from app.routes.auth import auth_bp
 from app.routes.chat import chat_bp
 from app.routes.message import message_bp
 from app.routes.upload import upload_bp
+import os
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
 CORS(
     app,
-    resources={r"/api/*": {"origins": "http://localhost:3000"}},
+    resources={r"/api/*": {"origins": os.getenv("FRONTEND_URL")}},
     supports_credentials=True
 )
 db.init_app(app)
