@@ -13,7 +13,7 @@ app.config.from_object(Config)
 
 CORS(
     app,
-    resources={r"/api/*": {"origins": "https://learna-theta.vercel.app"}},
+    resources={r"/api/*": {"origins": "http://localhost:3000"}},
     supports_credentials=True
 )
 db.init_app(app)
