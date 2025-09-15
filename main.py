@@ -12,11 +12,7 @@ import os
 app = Flask(__name__)
 app.config.from_object(Config)
 
-CORS(
-    app,
-    resources={r"/api/*": {"origins": os.getenv("FRONTEND_URL")}},
-    supports_credentials=True
-)
+CORS(app,supports_credentials=True)
 db.init_app(app)
 jwt = JWTManager(app)
 app.register_blueprint(auth_bp, url_prefix='/api/auth')
