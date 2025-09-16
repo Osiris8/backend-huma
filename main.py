@@ -10,9 +10,10 @@ from app.routes.upload import upload_bp
 import os
 
 app = Flask(__name__)
+CORS(app,supports_credentials=True)
 app.config.from_object(Config)
 
-CORS(app,supports_credentials=True)
+
 db.init_app(app)
 jwt = JWTManager(app)
 app.register_blueprint(auth_bp, url_prefix='/api/auth')
