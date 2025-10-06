@@ -14,7 +14,7 @@ message_bp = Blueprint("message", __name__)
 
 
 OLLAMA_MODELS = os.environ.get("OLLAMA_MODELS", "gpt-oss:20b").split(",")
-client = Groq(api_key=os.environ.get("GROQ_API_KEY", "GROQ_API_KEY"),)
+client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 GROQ_MODELS = os.environ.get("GROQ_MODELS", "openai/gpt-oss-120b").split(",")
 
 
