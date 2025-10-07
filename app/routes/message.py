@@ -1,6 +1,5 @@
 import os
 from flask import Blueprint,Response, request, stream_with_context, jsonify
-from ollama import chat
 from dotenv import load_dotenv
 from flask_jwt_extended import jwt_required, get_jwt_identity
 load_dotenv()
