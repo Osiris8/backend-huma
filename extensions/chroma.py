@@ -3,11 +3,17 @@ import chromadb
 
 from nomic import embed
 import nomic
-chroma_client = chromadb.PersistentClient(path="./chroma_db")
+
+
+client = chromadb.CloudClient(
+  api_key=os.environ.get("CHROMA_API_KEY"),
+  tenant='32d78b6f-1a11-4ac5-90c3-69baa6c7b763',
+  database='huma'
+)
 
 nomic.login(os.environ.get("ATLAS_NOMIC"))
 def get_collection(chat_id: int):
-    return chroma_client.get_or_create_collection(
+    return client.get_or_create_collection(
         name=f"chat_{chat_id}",
         metadata={"dimension": 768})
 
