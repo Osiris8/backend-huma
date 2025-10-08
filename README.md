@@ -9,3 +9,4 @@ nomic
 groq
 pypdf
 psycopg2
+gunicorn
