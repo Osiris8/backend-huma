@@ -7,4 +7,5 @@ python-dotenv
 chromadb
 nomic
 groq
-pip install pypdf
+pypdf
+psycopg2
