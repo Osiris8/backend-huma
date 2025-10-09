@@ -53,5 +53,3 @@ pip install flask flask_cors flask-jwt-extended Flask-SQLAlchemy python-dotenv c
 
 The frontend repository is available here:
 [Frontend Project](https://github.com/Osiris8/frontend-huma)
-
----
